@@ -1,16 +1,12 @@
 def chunked(long: int,beadroll: any) -> any:
     result = []
-    if len(beadroll) < long:
-        result = [beadroll,]
-        return result
-    else:
-        lst = beadroll[:]
-        cash = beadroll[0:0]
-        while len(lst) > 0:
-            cash = lst[0:long]
-            result.append(cash)
-            lst = lst[long:]
-        return result
+    lst = beadroll[:]
+    cash = beadroll[0:0]
+    while len(lst) > 0:
+        cash = lst[0:long]
+        result.append(cash)
+        lst = lst[long:]
+    return result
 
 
 print(chunked(2, ['a', 'b', 'c', 'd']))  # [['a', 'b'], ['c', 'd']]
