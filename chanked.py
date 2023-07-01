@@ -1,11 +1,9 @@
-def chunked(long: int,beadroll: any) -> any:
+def chunked(size, source):
     result = []
-    lst = beadroll[:]
-    cash = beadroll[0:0]
-    while len(lst) > 0:
-        cash = lst[0:long]
-        result.append(cash)
-        lst = lst[long:]
+    index = 0
+    while index < len(source):
+        result.append(source[index:index + size])
+        index += size
     return result
 
 
